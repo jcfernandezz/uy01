@@ -81,8 +81,8 @@
 
     </Feature>
 
-    <Binary Id="CreateBaseView02" SourceFile="C:\JCTii\GPRelational\rmvwRmTransaccionesTodas.view.sql"/>
-    <Binary Id="CreateBaseView04" SourceFile="C:\JCTii\GPRelational\rmVwTrxAplicadas.view.sql"/>
+    <Binary Id="CreateBaseView02" SourceFile="C:\jcTii\GPRelational\rmvwRmTransaccionesTodas.view.sql"/>
+    <Binary Id="CreateBaseView04" SourceFile="C:\jcTii\GPRelational\rmVwTrxAplicadas.view.sql"/>
 
     <Binary Id="CreateObj01" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\001_create schema.sql"/>
     <Binary Id="CreateObj02" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\002_UtilesYConfiguracion.view.sql"/>
