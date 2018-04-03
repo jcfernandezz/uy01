@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:sql="http://schemas.microsoft.com/wix/SqlExtension">
+
+  <Product Id="DC32F9EC-4D43-4B7C-AE3F-B56222276F77"
+           Name="GP Uruguay UCFE Sql Setup"
+           Language="1033"
+           Version="1.0.0.1"
+           Manufacturer="JCF"
+           UpgradeCode="B8FDF3BF-14D7-4F15-A403-A1E8636734B8">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine"/>
+    
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    
+    <!-- Define Installation folder-->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="StartMenuFolder"/>
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="MainDirectory" Name="Microsoft Dynamics">
+          <Directory Id="INSTALLFOLDER" Name="GP Uruguay UCFE Sql Setup">
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+
+    <!-- Define Installation components-->
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!--<Component Id="SqlComponentDyn" Guid="116E3271-192B-4ea7-8CB3-E91CDA1B8C03" KeyPath="yes">
+        <sql:SqlDatabase Id="SqlDatabaseDyn" User="SQLUser" Server="[SQLSERVER]" Database="DYNAMICS" CreateOnInstall="no" DropOnUninstall="no" ContinueOnError="yes">
+          <sql:SqlScript Id="Createview01" BinaryKey="Createview01" ExecuteOnInstall="yes" Sequence="30" ContinueOnError="no"/>
+          <sql:SqlScript Id="Grants02" BinaryKey="Grants02" ExecuteOnInstall="yes" Sequence="1000" ContinueOnError="no"/>
+        </sql:SqlDatabase>
+      </Component>-->
+
+      <Component Id="SqlComponent" Guid="7c32cf65-e060-4c7f-b5dd-d85c181da89c" KeyPath="yes">
+        <sql:SqlDatabase Id="SqlDatabase" User="SQLUser" Server="[SQLSERVER]" Database="[SQLDATABASE]" CreateOnInstall="no" DropOnUninstall="no" ContinueOnError="yes" >
+          <sql:SqlScript Id="CreateBaseView02" BinaryKey="CreateBaseView02" ExecuteOnInstall="yes" Sequence="02" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateBaseView04" BinaryKey="CreateBaseView04" ExecuteOnInstall="yes" Sequence="04" ExecuteOnReinstall="yes"/>
+          
+          <sql:SqlScript Id="CreateObj01" BinaryKey="CreateObj01" ExecuteOnInstall="yes" Sequence="05" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj02" BinaryKey="CreateObj02" ExecuteOnInstall="yes" Sequence="07" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj03" BinaryKey="CreateObj03" ExecuteOnInstall="yes" Sequence="10" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj04" BinaryKey="CreateObj04" ExecuteOnInstall="yes" Sequence="15" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj20" BinaryKey="CreateObj20" ExecuteOnInstall="yes" Sequence="20" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj30" BinaryKey="CreateObj30" ExecuteOnInstall="yes" Sequence="30" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj40" BinaryKey="CreateObj40" ExecuteOnInstall="yes" Sequence="40" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj50" BinaryKey="CreateObj50" ExecuteOnInstall="yes" Sequence="50" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj53" BinaryKey="CreateObj53" ExecuteOnInstall="yes" Sequence="53" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj56" BinaryKey="CreateObj56" ExecuteOnInstall="yes" Sequence="56" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj59" BinaryKey="CreateObj59" ExecuteOnInstall="yes" Sequence="59" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj61" BinaryKey="CreateObj61" ExecuteOnInstall="yes" Sequence="61" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj70" BinaryKey="CreateObj70" ExecuteOnInstall="yes" Sequence="70" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj75" BinaryKey="CreateObj75" ExecuteOnInstall="yes" Sequence="75" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj80" BinaryKey="CreateObj80" ExecuteOnInstall="yes" Sequence="80" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj85" BinaryKey="CreateObj85" ExecuteOnInstall="yes" Sequence="85" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj90" BinaryKey="CreateObj90" ExecuteOnInstall="yes" Sequence="90" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj95" BinaryKey="CreateObj95" ExecuteOnInstall="yes" Sequence="95" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj100" BinaryKey="CreateObj100" ExecuteOnInstall="yes" Sequence="100" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj105" BinaryKey="CreateObj105" ExecuteOnInstall="yes" Sequence="105" ExecuteOnReinstall="yes"/>
+          
+          <sql:SqlScript Id="Grants190" BinaryKey="Grants190" ExecuteOnInstall="yes" Sequence="190" ExecuteOnReinstall="yes"/>
+
+        </sql:SqlDatabase>
+      </Component>
+
+    </ComponentGroup>
+
+    <!--Install-->
+    <Feature Id="Complete" Title="GP Uruguay Componentes para interfaz con UCFE" Level="1" Description="Objetos sql y archivos de programa." Display="expand" ConfigurableDirectory="INSTALLFOLDER">
+      <!--<Feature Id="SqlFeatureDyn" Title="Objetos Sql Dynamics" Description="Tablas, vistas y procedimientos almacenados de Dynamics." Level="1">
+        <ComponentRef Id="SqlComponentDyn" />
+        <ComponentGroupRef Id="ProductComponents" />
+      </Feature>-->
+
+      <Feature Id="SqlFeature" Title="Objetos Sql Compañía" Description="Tablas, vistas y procedimientos almacenados de la Compañía." Level="1">
+        <ComponentRef Id="SqlComponent" />
+        <ComponentGroupRef Id="ProductComponents" />
+      </Feature>
+
+    </Feature>
+
+    <Binary Id="CreateBaseView02" SourceFile="C:\JCTii\GPRelational\rmvwRmTransaccionesTodas.view.sql"/>
+    <Binary Id="CreateBaseView04" SourceFile="C:\JCTii\GPRelational\rmVwTrxAplicadas.view.sql"/>
+
+    <Binary Id="CreateObj01" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\001_create schema.sql"/>
+    <Binary Id="CreateObj02" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\002_UtilesYConfiguracion.view.sql"/>
+    <Binary Id="CreateObj03" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\003_fcfdiParametros.function.sql"/>
+    <Binary Id="CreateObj04" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\004_fCfdEmisor.function.sql"/>
+    <Binary Id="CreateObj20" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\085_fCfdDatosAdicionales.function.sql"/>
+    <Binary Id="CreateObj30" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\090_vwCfdiSopTransacionesVenta.view.sql"/>
+    <Binary Id="CreateObj40" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\094_fCfdiRelacionados.functions.sql"/>
+    <Binary Id="CreateObj50" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\100_fCfdiGeneraDocumentoDeVentaXML.sql"/>
+
+    <Binary Id="CreateObj53" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\108_vwComprobantesFiscalesElectronicos.view.sql"/>
+    <Binary Id="CreateObj56" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\110_vwCfePendientesDeEnviar.view.sql"/>
+    <Binary Id="CreateObj59" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\112_vwCfeEnEspera.view.sql"/>
+    <Binary Id="CreateObj61" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\114_vwCfeDgi1Acepta.view.sql"/>
+
+    <Binary Id="CreateObj70" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\120_spSolicitaFirmaABandejaUCFE.PRODsprocedure.sql"/>
+    <Binary Id="CreateObj75" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\120_spSolicitaFirmaABandejaUCFE.TESTsprocedure.sql"/>
+    <Binary Id="CreateObj80" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\122_spConsultaEstadoDeCFEABandejaUCFE.TESTsprocedure.sql"/>
+    <Binary Id="CreateObj85" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\122_spConsultaEstadoDeCFEABandejaUCFE.PRODsprocedure.sql"/>
+    <Binary Id="CreateObj90" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\145_vwRespuestasDeBandejaOutUcfe.PRODview.sql"/>
+    <Binary Id="CreateObj95" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\145_vwRespuestasDeBandejaOutUcfe.TESTview.sql"/>
+    <Binary Id="CreateObj100" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\150_spRevisaRespuestasDeBandejaUCFE.PRODsprocedure.sql"/>
+    <Binary Id="CreateObj105" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\150_spRevisaRespuestasDeBandejaUCFE.TESTsprocedure.sql"/>
+
+    <Binary Id="Grants190" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\190_DaPermisosFacturaElectronicaCia.grant.sql"/>
+    
+
+    <util:User Id="SQLUser" Name="[SQLUSER]" Password="[SQLPASSWORD]"></util:User>
+    <!--Variables SQL-->
+    <Property Id="SQLUSER">sa</Property>
+    <Property Id="SQLPASSWORD">password</Property>
+    <Property Id="SQLSERVER">servidor\instancia</Property>
+    <Property Id="SQLDATABASE">bd</Property>
+
+    <UI Id="MyWixUI_Mondo">
+      <UIRef Id="WixUI_Mondo"/>
+
+      <!--Pide valores para variables SQL-->
+      <DialogRef Id="UserRegistrationDlg"/>
+
+      <Publish Dialog="CustomizeDlg" Control="Next" Event="NewDialog" Value="UserRegistrationDlg" Order="4">WixUI_InstallMode = "Change"</Publish>
+      <Publish Dialog="CustomizeDlg" Control="Next" Event="NewDialog" Value="UserRegistrationDlg" Order="5">WixUI_InstallMode = "InstallCustom"</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="UserRegistrationDlg" Order="5">WixUI_InstallMode = "InstallCustom"</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="UserRegistrationDlg" Order="6">WixUI_InstallMode = "Change"</Publish>
+    </UI>
+
+    <UIRef Id="WixUI_ErrorProgressText" />
+
+  </Product>
+</Wix>
