@@ -155,6 +155,7 @@ as
 --Propósito. Elabora un comprobante xml para factura electrónica ucfe
 --Requisitos. Se asume que todos los items son exentos
 --27/03/18 JCF Creación cfe
+--18/04/18 jcf Agrega filtro estadoContabilizado
 --
 begin
 	declare @cfd xml;
@@ -215,6 +216,7 @@ begin
 					) ld
 	where tv.sopnumbe =	@sopnumbe
 	and tv.soptype = @soptype
+	and tv.estadoContabilizado = 'contabilizado'
 	FOR XML path('CFE'), type
 	);
 	--select @cfd;

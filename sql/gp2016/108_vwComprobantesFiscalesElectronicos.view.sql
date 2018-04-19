@@ -11,7 +11,7 @@ alter view ucfe.vwComprobantesFiscalesElectronicos as
 --
 
 	select  pr.param5 tipoCfe, pr.param1 codTerminal, pr.param2 codComercio, tv.sopnumbe, tv.SOPTYPE, tv.docid, 
-		tv.usrtab01, isnull(tv.usrtab01, '') statusCfe, 
+		tv.usrtab01, isnull(tv.usrtab01, '') statusCfe, tv.USRDEF05,
 		ucfe.fCfdiGeneraDocumentoDeVentaXML (tv.soptype, tv.sopnumbe) docXml
 	from ucfe.vwCfdiSopTransaccionesVenta tv
 		cross apply ucfe.fCfdiParametros('CODTERMINAL', 'CODCOMERCIO', 'na', 'na', 'E_'+tv.docid, 'na', 'UCFE') pr

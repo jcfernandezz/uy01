@@ -11,14 +11,12 @@ IF DATABASE_PRINCIPAL_ID('rol_uruguayUcfe') IS NULL
 	create role rol_uruguayUcfe;
 
 --Objetos que usa factura electrónica
-grant execute on ucfe.spSolicitaFirmaABandejaUCFE_PROD to rol_uruguayUcfe, dyngrp;
-grant execute on ucfe.spSolicitaFirmaABandejaUCFE_TEST to rol_uruguayUcfe, dyngrp;
-
-GRANT EXECUTE ON ucfe.spRevisaRespuestasDeBandejaUCFE_PROD TO rol_uruguayUcfe, dyngrp;
-GRANT EXECUTE ON ucfe.spRevisaRespuestasDeBandejaUCFE_TEST TO rol_uruguayUcfe, dyngrp;
-
-GRANT EXECUTE ON ucfe.spConsultaEstadoCFEABandejaUCFE_TEST TO rol_uruguayUcfe, dyngrp;
-GRANT EXECUTE ON ucfe.spConsultaEstadoCFEABandejaUCFE_PROD TO rol_uruguayUcfe, dyngrp;
+grant execute on ucfe.spSolicitaFirmaABandejaUCFE to rol_uruguayUcfe, dyngrp;
+GRANT EXECUTE ON ucfe.spRevisaRespuestasDeBandejaUCFE TO rol_uruguayUcfe, dyngrp;
+GRANT EXECUTE ON ucfe.spConsultaEstadoCFEABandejaUCFE TO rol_uruguayUcfe, dyngrp;
+grant select on ucfe.vwFacturasConStatus to rol_uruguayUcfe, dyngrp;
+--grant select, update, delete, insert on ucfe.synonymDatabaseChannelInput to rol_uruguayUcfe, dyngrp;
+--grant select on ucfe.fnSinonimoApuntaADBChannelInputCorrecta() to rol_uruguayUcfe, dyngrp;
 
 GO
 USE DYNAMICS;
@@ -46,3 +44,13 @@ IF DATABASE_PRINCIPAL_ID('rol_uruguayUcfe') IS NULL
 
 GRANT SELECT, update, delete, insert ON DATABASEChannelInput TO rol_uruguayUcfe;
 GRANT SELECT, update, delete, insert ON DATABASEChannelOutput TO rol_uruguayUcfe;
+go
+
+use master;
+GO
+IF DATABASE_PRINCIPAL_ID('rol_uruguayUcfe') IS NULL
+	create role rol_uruguayUcfe;
+
+GRANT SELECT ON sys.synonyms TO rol_uruguayUcfe;
+go
+
