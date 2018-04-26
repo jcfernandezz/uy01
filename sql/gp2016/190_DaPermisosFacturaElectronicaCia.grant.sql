@@ -14,9 +14,13 @@ IF DATABASE_PRINCIPAL_ID('rol_uruguayUcfe') IS NULL
 grant execute on ucfe.spSolicitaFirmaABandejaUCFE to rol_uruguayUcfe, dyngrp;
 GRANT EXECUTE ON ucfe.spRevisaRespuestasDeBandejaUCFE TO rol_uruguayUcfe, dyngrp;
 GRANT EXECUTE ON ucfe.spConsultaEstadoCFEABandejaUCFE TO rol_uruguayUcfe, dyngrp;
-grant select on ucfe.vwFacturasConStatus to rol_uruguayUcfe, dyngrp;
---grant select, update, delete, insert on ucfe.synonymDatabaseChannelInput to rol_uruguayUcfe, dyngrp;
---grant select on ucfe.fnSinonimoApuntaADBChannelInputCorrecta() to rol_uruguayUcfe, dyngrp;
+grant select on dbo.vwUcfeFacturasConStatus to rol_uruguayUcfe, dyngrp;
+grant select on ucfe.vwCfePendientesDeEnviar to rol_uruguayUcfe, dyngrp;
+grant select, update, insert, delete on ucfe.synonymDatabaseChannelInput to rol_uruguayUcfe, dyngrp;
+grant select, update, insert, delete on dbo.sop10106 to rol_uruguayUcfe, dyngrp;
+grant select on ucfe.vwRespuestasDeBandejaOutUcfe to rol_uruguayUcfe, dyngrp;
+grant select on ucfe.vwCfeDgi1Acepta to rol_uruguayUcfe, dyngrp;
+grant select on ucfe.fnSinonimoApuntaADBChannelInputCorrecta to rol_uruguayUcfe, dyngrp;
 
 GO
 USE DYNAMICS;

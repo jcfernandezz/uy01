@@ -11,15 +11,18 @@ alter view ucfe.vwCfePendientesDeEnviar as
 --		CFE_LISTO. Está listo para enviar a UCFE
 --27/03/18 jcf Creación cfe Uruguay
 --19/04/18 jcf Mostrar sólo los comprobantes contabilizados
+--25/04/18 JCF No muestra las facturas que no estén validadas
 --
 
-	select  tv.tipoCfe, tv.codTerminal, tv.codComercio, tv.sopnumbe, tv.SOPTYPE, tv.docid, 'CFE_ENESPERA' siguienteStatusCfe,
-		ucfe.fCfdiGeneraDocumentoDeVentaXML (tv.soptype, tv.sopnumbe) docXml, ac.jrnentry
+	select  tv.tipoCfe, tv.codTerminal, tv.codComercio, tv.sopnumbe, tv.SOPTYPE, tv.docid, 
+		'CFE_ENESPERA' siguienteStatusCfe,	tv.docXml, ac.jrnentry
 	from ucfe.vwComprobantesFiscalesElectronicos tv
 		cross apply dbo.fnGlGetPrimerAsientoContableDeTrx(3, tv.soptype, tv.sopnumbe) ac
-	where isnull(tv.usrtab01, '') in ('', 'CFE_LISTO')
+		outer apply ucfe.fnValidaNCAplicada(tv.soptype, tv.docXml) vnc
+	where rtrim(isnull(tv.usrtab01, '')) in ('', 'CFE_LISTO')
 	and ac.origen in ('Histórico', 'Abrir')
-	  
+	and	vnc.validacionGP = 'OK'
+
 go
 
 IF (@@Error = 0) PRINT 'Creación exitosa de la vista: vwCfePendientesDeEnviar'

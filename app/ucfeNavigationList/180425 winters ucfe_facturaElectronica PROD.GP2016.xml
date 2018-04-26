@@ -1,0 +1,897 @@
+<TABLE>
+<NAME>NLB_Navigation_Lists</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Name'</NAME>
+<VALUE>UCFE Factura Electrónico Producción</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Number'</NAME>
+<VALUE>2</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Type'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Series Number'</NAME>
+<VALUE>2</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Note Index'</NAME>
+<VALUE>81230.00000</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Created Date'</NAME>
+<VALUE>25/4/2018</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Created User ID'</NAME>
+<VALUE>sa</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Modified Date'</NAME>
+<VALUE>25/4/2018</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Modified User ID'</NAME>
+<VALUE>sa</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'ASI_Search_Type'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+</TABLE>
+<TABLE>
+<NAME>NLB_Tables</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'External Table'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Physical Name'</NAME>
+<VALUE>vwUcfeFacturasConStatus</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'SQL Database Name'</NAME>
+<VALUE>PRD02</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Object Type'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+</TABLE>
+<TABLE>
+<NAME>NLB_Fields</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>tipoCfe</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>Tipo CFE</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Display Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Currency Symbol'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Thousands Separator'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>2</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>sopnumbe</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>Número de ventas</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Display Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Preview Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Currency Symbol'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Thousands Separator'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>SOPTYPE</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>SOPTYPE</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>4</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>docid</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>Id Doc.</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Display Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Preview Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Currency Symbol'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Thousands Separator'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>statusCfe</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>Status CFE</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Display Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Preview Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Currency Symbol'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Thousands Separator'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>6</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>serieNumCfe</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>Número CFE</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Display Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Preview Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Currency Symbol'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Thousands Separator'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>7</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>IdReq</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>Id Req.</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Display Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>2</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>8</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>CodRta</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>Cod. Respuesta</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Display Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Currency Symbol'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Thousands Separator'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>9</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>MensajeRta</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>Mensaje Respuesta</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Display Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Preview Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Currency Symbol'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Thousands Separator'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>10</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>ucfeXml</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>CFE Xml</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Preview Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Currency Symbol'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Thousands Separator'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>11</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>TipoMsj</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>Tipo Mensaje</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Display Field'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>2</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>12</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>FechaHoraRta</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation Display Name'</NAME>
+<VALUE>FechaHoraRta</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Type'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field String Format'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Currency'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Currency Symbol'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Show Thousands Separator'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Decimal Places Method'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+</RECORD>
+</TABLE>
+<TABLE>
+<NAME>NLB_Actions</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Action_Parameters</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Action_Tasks</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Additional_Tables</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Additional_Table_Fields</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Keys</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>sopnumbe</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Navigation List Field Name'</NAME>
+<VALUE>SOPTYPE</VALUE>
+</FIELD>
+</RECORD>
+</TABLE>
+<TABLE>
+<NAME>NLB_Links</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_List_Items</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Negative_Values</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Preview_Fields</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Column Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Line Item Sequence'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>2</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Column Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Line Item Sequence'</NAME>
+<VALUE>2</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>10</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Column Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Line Item Sequence'</NAME>
+<VALUE>3</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>9</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Column Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Line Item Sequence'</NAME>
+<VALUE>4</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>4</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Column Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Line Item Sequence'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>5</VALUE>
+</FIELD>
+</RECORD>
+<RECORD>
+<FIELD>
+<NAME>'Navigation List ID'</NAME>
+<VALUE>UCFE_ETICKET_PR</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Column Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Line Item Sequence'</NAME>
+<VALUE>6</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Table Number'</NAME>
+<VALUE>1</VALUE>
+</FIELD>
+<FIELD>
+<NAME>'Field Number'</NAME>
+<VALUE>6</VALUE>
+</FIELD>
+</RECORD>
+</TABLE>
+<TABLE>
+<NAME>NLB_Restrictions</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Restriction_Users</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Restriction_Values</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>
+<TABLE>
+<NAME>NLB_Status_Images</NAME>
+<PRODUCT>3830</PRODUCT>
+<SEPARATOR>-</SEPARATOR>
+</TABLE>

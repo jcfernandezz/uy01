@@ -50,6 +50,7 @@
           <sql:SqlScript Id="CreateObj30" BinaryKey="CreateObj30" ExecuteOnInstall="yes" Sequence="30" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj40" BinaryKey="CreateObj40" ExecuteOnInstall="yes" Sequence="40" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj50" BinaryKey="CreateObj50" ExecuteOnInstall="yes" Sequence="50" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj52" BinaryKey="CreateObj52" ExecuteOnInstall="yes" Sequence="52" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj53" BinaryKey="CreateObj53" ExecuteOnInstall="yes" Sequence="53" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj56" BinaryKey="CreateObj56" ExecuteOnInstall="yes" Sequence="56" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj59" BinaryKey="CreateObj59" ExecuteOnInstall="yes" Sequence="59" ExecuteOnReinstall="yes"/>
@@ -97,6 +98,7 @@
     <Binary Id="CreateObj30" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\090_vwCfdiSopTransacionesVenta.view.sql"/>
     <Binary Id="CreateObj40" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\094_fCfdiRelacionados.functions.sql"/>
     <Binary Id="CreateObj50" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\100_fCfdiGeneraDocumentoDeVentaXML.sql"/>
+    <Binary Id="CreateObj52" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\102_fValidaNCAplicada.sql"/>
 
     <Binary Id="CreateObj53" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\108_vwComprobantesFiscalesElectronicos.view.sql"/>
     <Binary Id="CreateObj56" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\110_vwCfePendientesDeEnviar.view.sql"/>

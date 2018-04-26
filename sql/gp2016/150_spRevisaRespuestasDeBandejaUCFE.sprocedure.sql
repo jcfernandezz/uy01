@@ -24,9 +24,9 @@ AS
 				) as S
 		on (T.sopnumbe = S.UUID)
 		when MATCHED 
-			and S.IdReq > convert(int, T.usrdef04)	--Si es nuevo mensaje de ucfe
+			and S.IdReq > convert(int, rtrim(T.usrdef04))	--Si es nuevo mensaje de ucfe
 			and S.siguienteStatusCfe != 'CODIGO RTA DESCONOCIDO'
-			THEN UPDATE SET T.usrdef05 = S.serieNumeroCfe, T.usrtab01 = S.siguienteStatusCfe, T.usrdef04 = convert(char(21), S.IdReq)
+			THEN UPDATE SET T.usrdef05 = S.serieNumeroCfe, T.usrtab01 = S.siguienteStatusCfe, T.usrdef04 = convert(char(20), S.IdReq)
 		;
 	end
 GO
