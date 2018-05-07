@@ -1,0 +1,11 @@
+Agregar el id de tarea UCFE FACTURA ELECTRONICA
+	Categoría: Ventas
+	Producto: Microsoft Dynamics GP
+	Tipo: LIstas de exploración
+	Serie: LIstas de exploración
+	Tipo de usuario: completo
+	Marcar: UCFE Factura Electrónica TEST y PROD
+
+Agregar el id de función UCFE F ELECTRONICA UY
+	Marcar la tarea UCFE FACTURA ELECTRONICA
+

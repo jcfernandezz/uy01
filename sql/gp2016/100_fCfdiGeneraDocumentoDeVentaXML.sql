@@ -156,6 +156,7 @@ as
 --Requisitos. Se asume que todos los items son exentos
 --27/03/18 JCF Creación cfe
 --18/04/18 jcf Agrega filtro estadoContabilizado
+--04/05/18 jcf Agrega nombre de cliente y dirección
 --
 begin
 	declare @cfd xml;
@@ -187,9 +188,14 @@ begin
 			else null
 			end												'eTck/Encabezado/Receptor/DocRecep',
 		case when rtrim(tv.ccode) in ( '', 'UY') then null
-			else rtrim(tv.TXRGNNUM)
+			else right(rtrim(tv.TXRGNNUM), 20)
 			end												'eTck/Encabezado/Receptor/DocRecepExt',
-
+		tv.nombreCliente									'eTck/Encabezado/Receptor/RznSocRecep',
+		left(tv.address1 +'-'+ tv.address2, 70)				'eTck/Encabezado/Receptor/DirRecep',
+		tv.city												'eTck/Encabezado/Receptor/CiudadRecep',
+		tv.[state]											'eTck/Encabezado/Receptor/DeptoRecep',
+		tv.country											'eTck/Encabezado/Receptor/PaisRecep',
+		tv.zipcode											'eTck/Encabezado/Receptor/CP',
 		tv.curncyid											'eTck/Encabezado/Totales/TpoMoneda',
 
 		case when tv.curncyid = 'UYU'
