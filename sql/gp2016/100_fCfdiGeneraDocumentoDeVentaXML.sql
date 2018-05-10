@@ -115,6 +115,7 @@ as
 --Propósito. Obtiene las líneas de una factura en formato xml para ucfe
 --			Elimina carriage returns, line feeds, tabs, secuencias de espacios y caracteres especiales.
 --27/03/18 JCF Creación cfe
+--10/05/18 jcf nombre del item <= 80 caracteres
 --
 begin
 	declare @cncp xml;
@@ -123,7 +124,7 @@ begin
 		select 
 			Concepto.id								'NroLinDet',
 			Concepto.indicadorFactura				'IndFact',
-			Concepto.DescripcionItem				'NomItem', 
+			left(Concepto.DescripcionItem, 80)		'NomItem', 
 			Concepto.Cantidad						'Cantidad', 
 			rtrim(Concepto.UOFM)					'UniMed', 
 			cast(Concepto.ORUNTPRC as numeric(13, 2)) 'PrecioUnitario',

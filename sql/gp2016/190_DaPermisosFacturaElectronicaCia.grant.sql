@@ -5,7 +5,8 @@
 --2/03/18 JCF Creación
 --
 -----------------------------------------------------------------------------------
---use arg10
+use prd02
+go
 
 IF DATABASE_PRINCIPAL_ID('rol_uruguayUcfe') IS NULL
 	create role rol_uruguayUcfe;
@@ -21,6 +22,8 @@ grant select, update, insert, delete on dbo.sop10106 to rol_uruguayUcfe, dyngrp;
 grant select on ucfe.vwRespuestasDeBandejaOutUcfe to rol_uruguayUcfe, dyngrp;
 grant select on ucfe.vwCfeDgi1Acepta to rol_uruguayUcfe, dyngrp;
 grant select on ucfe.fnSinonimoApuntaADBChannelInputCorrecta to rol_uruguayUcfe, dyngrp;
+grant select on ucfe.fCfdiParametros to rol_uruguayUcfe;
+GRANT SELECT ON sys.synonyms TO rol_uruguayUcfe;
 
 GO
 USE DYNAMICS;

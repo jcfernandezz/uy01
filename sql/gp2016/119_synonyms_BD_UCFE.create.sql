@@ -1,15 +1,17 @@
-	DECLARE @BD_UCFEPROD varchar(30), @BD_UCFETEST  varchar(30);  
+	DECLARE @BD_UCFEPROD varchar(30), @BD_UCFETEST  varchar(30), @BD_GPPROD  varchar(30);  
 	DECLARE @BD_UCFE varchar(30);
 
-	select @BD_UCFEPROD = param3, @BD_UCFETEST = param4
+	select @BD_GPPROD = param1, @BD_UCFEPROD = param3, @BD_UCFETEST = param4
 	from ucfe.fCfdiParametros('BD_GPPROD', 'BD_GPTEST', 'BD_UCFEPROD', 'BD_UCFETEST', 'NA', 'NA', 'UCFE')
 
-	if @BD_UCFEPROD = db_name()
+	if @BD_GPPROD = db_name()
 		--print @BD_UCFEPROD
 		set @BD_UCFE = @BD_UCFEPROD
 	else
-		--print 'test?'
+		--print @BD_UCFETEST
 		set @BD_UCFE = @BD_UCFETEST
+
+	print @BD_UCFE
 
 	if OBJECT_ID('ucfe.synonymDatabaseChannelInput') is not null
 		DROP SYNONYM ucfe.synonymDatabaseChannelInput;
