@@ -11,6 +11,7 @@ GO
 --Propósito. Solicita firma de CFE
 --Requisito. 
 --19/04/18 jcf Creación
+--17/05/18 jcf Agrega adenda
 --
 create PROCEDURE ucfe.spSolicitaFirmaABandejaUCFE 
 AS
@@ -18,9 +19,11 @@ AS
 		if exists(select * from ucfe.fnSinonimoApuntaADBChannelInputCorrecta())
 		begin
 			BEGIN TRAN;
-			insert into ucfe.synonymDatabaseChannelInput(TipoMsj, TipoCfe, CodTerminal, CodComercio, FechaReq, HoraReq, UUID, [Xml])
-			select 310, pe.tipoCfe, pe.codTerminal, pe.codComercio, GETDATE(), 0, pe.sopnumbe, convert(varchar(max), pe.docXml)
-			from ucfe.vwCfePendientesDeEnviar pe
+			insert into ucfe.synonymDatabaseChannelInput(TipoMsj, TipoCfe, CodTerminal, CodComercio, FechaReq, HoraReq, UUID, adenda, [Xml])
+										select 310, pe.tipoCfe, pe.codTerminal, pe.codComercio, GETDATE(), 0, pe.sopnumbe, 
+											'Condición de pago: '+rtrim(pe.pymtrmid)+char(10)+case when pe.soptype = 3 then 'Incoterm: ' else '' end + rtrim(pe.comment_1), 
+											convert(varchar(max), pe.docXml)
+										from ucfe.vwCfePendientesDeEnviar pe
 			;
 
 			MERGE sop10106 AS T

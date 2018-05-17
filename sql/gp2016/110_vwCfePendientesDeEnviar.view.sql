@@ -12,10 +12,11 @@ alter view ucfe.vwCfePendientesDeEnviar as
 --27/03/18 jcf Creación cfe Uruguay
 --19/04/18 jcf Mostrar sólo los comprobantes contabilizados
 --25/04/18 JCF No muestra las facturas que no estén validadas
+--17/05/18 jcf Agrega comment_1, pymtrmid
 --
 
 	select  tv.tipoCfe, tv.codTerminal, tv.codComercio, tv.sopnumbe, tv.SOPTYPE, tv.docid, 
-		'CFE_ENESPERA' siguienteStatusCfe,	tv.docXml, ac.jrnentry
+		'CFE_ENESPERA' siguienteStatusCfe,	tv.docXml, ac.jrnentry, tv.comment_1, tv.pymtrmid
 	from ucfe.vwComprobantesFiscalesElectronicos tv
 		cross apply dbo.fnGlGetPrimerAsientoContableDeTrx(3, tv.soptype, tv.sopnumbe) ac
 		outer apply ucfe.fnValidaNCAplicada(tv.soptype, tv.docXml) vnc

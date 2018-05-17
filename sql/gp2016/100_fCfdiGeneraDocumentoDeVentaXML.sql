@@ -158,6 +158,7 @@ as
 --27/03/18 JCF Creación cfe
 --18/04/18 jcf Agrega filtro estadoContabilizado
 --04/05/18 jcf Agrega nombre de cliente y dirección
+--17/05/18 jcf Agrega fmaPago, CompraID
 --
 begin
 	declare @cfd xml;
@@ -172,8 +173,14 @@ begin
 
 		rtrim(pr.param5)									'eTck/Encabezado/IdDoc/TipoCFE',
 		replace(convert(varchar(20), tv.DOCDATE, 102), '.', '-')	'eTck/Encabezado/IdDoc/FchEmis',
-		1													'eTck/Encabezado/IdDoc/FmaPago',
-
+		case when isnull(ni.TXTFIELD, 'CREDITO') like '%CONTADO%' 
+			then 1 
+			else 2 
+		end													'eTck/Encabezado/IdDoc/FmaPago',
+		case when isnull(ni.TXTFIELD, 'CREDITO') like '%CONTADO%' 
+			then null
+			else replace(convert(varchar(20), tv.duedate, 102), '.', '-')
+		end													'eTck/Encabezado/IdDoc/FchVenc',
 		emi.TAXREGTN										'eTck/Encabezado/Emisor/RUCEmisor',
 		emi.CMPNYNAM										'eTck/Encabezado/Emisor/RznSoc',
 		emi.sucursal										'eTck/Encabezado/Emisor/CdgDGISucur',
@@ -197,6 +204,7 @@ begin
 		tv.[state]											'eTck/Encabezado/Receptor/DeptoRecep',
 		tv.country											'eTck/Encabezado/Receptor/PaisRecep',
 		tv.zipcode											'eTck/Encabezado/Receptor/CP',
+		tv.cstponbr											'eTck/Encabezado/Receptor/CompraID',
 		tv.curncyid											'eTck/Encabezado/Totales/TpoMoneda',
 
 		case when tv.curncyid = 'UYU'
@@ -213,8 +221,11 @@ begin
 		cast(tv.total  as numeric(17, 2))					'eTck/Encabezado/Totales/MntPagar',
 		ucfe.fCfdiConceptosXML(tv.soptype, tv.sopnumbe, tv.docid) 'eTck',
 		ucfe.fCfdiRelacionadosXML(tv.soptype, tv.sopnumbe, tv.commntid, tv.comment_1) 'eTck'
-
 	from ucfe.vwCfdiSopTransaccionesVenta tv
+		left join sy03300 cp
+			on cp.pymtrmid = tv.pymtrmid
+		left join sy03900 ni
+			on ni.NOTEINDX = cp.NOTEINDX
 		outer apply ucfe.fCfdiEmisor() emi
 		outer apply ucfe.fCfdiParametros('na', 'V_PREFEXENTO', 'na', 'na', 'E_'+tv.docid, 'na', 'UCFE') pr
 		outer apply (select count(id) cantLinDet, 
