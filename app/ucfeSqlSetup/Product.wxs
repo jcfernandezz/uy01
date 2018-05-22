@@ -36,25 +36,28 @@
 
       <Component Id="SqlComponent" Guid="7c32cf65-e060-4c7f-b5dd-d85c181da89c" KeyPath="yes">
         <sql:SqlDatabase Id="SqlDatabase" User="SQLUser" Server="[SQLSERVER]" Database="[SQLDATABASE]" CreateOnInstall="no" DropOnUninstall="no" ContinueOnError="yes" >
-          <sql:SqlScript Id="CreateBaseView02" BinaryKey="CreateBaseView02" ExecuteOnInstall="yes" Sequence="02" ExecuteOnReinstall="yes"/>
-          <sql:SqlScript Id="CreateBaseView04" BinaryKey="CreateBaseView04" ExecuteOnInstall="yes" Sequence="04" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateBaseView02" BinaryKey="CreateBaseView02" ExecuteOnInstall="yes" Sequence="01" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateBaseView04" BinaryKey="CreateBaseView04" ExecuteOnInstall="yes" Sequence="02" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateBaseView06" BinaryKey="CreateBaseView06" ExecuteOnInstall="yes" Sequence="03" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateBaseView08" BinaryKey="CreateBaseView08" ExecuteOnInstall="yes" Sequence="04" ExecuteOnReinstall="yes"/>
           
           <sql:SqlScript Id="CreateObj01" BinaryKey="CreateObj01" ExecuteOnInstall="yes" Sequence="05" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj02" BinaryKey="CreateObj02" ExecuteOnInstall="yes" Sequence="07" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj03" BinaryKey="CreateObj03" ExecuteOnInstall="yes" Sequence="10" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj04" BinaryKey="CreateObj04" ExecuteOnInstall="yes" Sequence="15" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj06" BinaryKey="CreateObj06" ExecuteOnInstall="yes" Sequence="17" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj20" BinaryKey="CreateObj20" ExecuteOnInstall="yes" Sequence="20" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj30" BinaryKey="CreateObj30" ExecuteOnInstall="yes" Sequence="30" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj40" BinaryKey="CreateObj40" ExecuteOnInstall="yes" Sequence="40" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj50" BinaryKey="CreateObj50" ExecuteOnInstall="yes" Sequence="50" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj52" BinaryKey="CreateObj52" ExecuteOnInstall="yes" Sequence="52" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj53" BinaryKey="CreateObj53" ExecuteOnInstall="yes" Sequence="53" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj56" BinaryKey="CreateObj56" ExecuteOnInstall="yes" Sequence="56" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj59" BinaryKey="CreateObj59" ExecuteOnInstall="yes" Sequence="59" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj61" BinaryKey="CreateObj61" ExecuteOnInstall="yes" Sequence="61" ExecuteOnReinstall="yes"/>
+          <sql:SqlScript Id="CreateObj68" BinaryKey="CreateObj68" ExecuteOnInstall="yes" Sequence="65" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj70" BinaryKey="CreateObj70" ExecuteOnInstall="yes" Sequence="70" ExecuteOnReinstall="yes"/>
-          <sql:SqlScript Id="CreateObj75" BinaryKey="CreateObj75" ExecuteOnInstall="yes" Sequence="75" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj80" BinaryKey="CreateObj80" ExecuteOnInstall="yes" Sequence="80" ExecuteOnReinstall="yes"/>
-          <sql:SqlScript Id="CreateObj85" BinaryKey="CreateObj85" ExecuteOnInstall="yes" Sequence="85" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj90" BinaryKey="CreateObj90" ExecuteOnInstall="yes" Sequence="90" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj95" BinaryKey="CreateObj95" ExecuteOnInstall="yes" Sequence="95" ExecuteOnReinstall="yes"/>
           <sql:SqlScript Id="CreateObj100" BinaryKey="CreateObj100" ExecuteOnInstall="yes" Sequence="100" ExecuteOnReinstall="yes"/>
@@ -83,29 +86,32 @@
 
     <Binary Id="CreateBaseView02" SourceFile="C:\jcTii\GPRelational\rmvwRmTransaccionesTodas.view.sql"/>
     <Binary Id="CreateBaseView04" SourceFile="C:\jcTii\GPRelational\rmVwTrxAplicadas.view.sql"/>
+    <Binary Id="CreateBaseView06" SourceFile="C:\jcTii\GPRelational\glVwDetalleAsientosTodos.views.sql"/>
+    <Binary Id="CreateBaseView08" SourceFile="C:\jcTii\GPRelational\glfnGlGetPrimerAsientoContableDeTrx.function.sql"/>
 
     <Binary Id="CreateObj01" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\001_create schema.sql"/>
     <Binary Id="CreateObj02" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\002_UtilesYConfiguracion.view.sql"/>
     <Binary Id="CreateObj03" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\003_fcfdiParametros.function.sql"/>
     <Binary Id="CreateObj04" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\004_fCfdEmisor.function.sql"/>
+    <Binary Id="CreateObj06" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\006_fnSinonimoApuntaADBChannelInputCorrecta.function.sql"/>
     <Binary Id="CreateObj20" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\085_fCfdDatosAdicionales.function.sql"/>
     <Binary Id="CreateObj30" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\090_vwCfdiSopTransacionesVenta.view.sql"/>
     <Binary Id="CreateObj40" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\094_fCfdiRelacionados.functions.sql"/>
     <Binary Id="CreateObj50" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\100_fCfdiGeneraDocumentoDeVentaXML.sql"/>
+    <Binary Id="CreateObj52" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\102_fValidaNCAplicada.sql"/>
 
     <Binary Id="CreateObj53" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\108_vwComprobantesFiscalesElectronicos.view.sql"/>
     <Binary Id="CreateObj56" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\110_vwCfePendientesDeEnviar.view.sql"/>
     <Binary Id="CreateObj59" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\112_vwCfeEnEspera.view.sql"/>
     <Binary Id="CreateObj61" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\114_vwCfeDgi1Acepta.view.sql"/>
 
-    <Binary Id="CreateObj70" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\120_spSolicitaFirmaABandejaUCFE.PRODsprocedure.sql"/>
-    <Binary Id="CreateObj75" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\120_spSolicitaFirmaABandejaUCFE.TESTsprocedure.sql"/>
-    <Binary Id="CreateObj80" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\122_spConsultaEstadoDeCFEABandejaUCFE.TESTsprocedure.sql"/>
-    <Binary Id="CreateObj85" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\122_spConsultaEstadoDeCFEABandejaUCFE.PRODsprocedure.sql"/>
-    <Binary Id="CreateObj90" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\145_vwRespuestasDeBandejaOutUcfe.PRODview.sql"/>
-    <Binary Id="CreateObj95" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\145_vwRespuestasDeBandejaOutUcfe.TESTview.sql"/>
-    <Binary Id="CreateObj100" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\150_spRevisaRespuestasDeBandejaUCFE.PRODsprocedure.sql"/>
-    <Binary Id="CreateObj105" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\150_spRevisaRespuestasDeBandejaUCFE.TESTsprocedure.sql"/>
+    <Binary Id="CreateObj68" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\119_synonyms_BD_UCFE.create.sql"/>
+    <Binary Id="CreateObj70" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\120_spSolicitaFirmaABandejaUCFE.sprocedure.sql"/>
+    <Binary Id="CreateObj80" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\122_spConsultaEstadoDeCFEABandejaUCFE.sprocedure.sql"/>
+    <Binary Id="CreateObj90" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\142_vwUltimoMensajeDeUcfeClienteInter.sql"/>
+    <Binary Id="CreateObj95" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\145_vwRespuestasDeBandejaOutUcfe.view.sql"/>
+    <Binary Id="CreateObj100" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\150_spRevisaRespuestasDeBandejaUCFE.sprocedure.sql"/>
+    <Binary Id="CreateObj105" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\160_vwFacturasConStatus.VIEW.sql"/>
 
     <Binary Id="Grants190" SourceFile="C:\jcTii\Desarrollo\URU_FacturaElectrónicaUcfe\uy01\sql\gp2016\190_DaPermisosFacturaElectronicaCia.grant.sql"/>
     

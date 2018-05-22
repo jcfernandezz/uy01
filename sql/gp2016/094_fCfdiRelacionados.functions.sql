@@ -93,7 +93,7 @@ begin
 				end 'NroCFERef',
 				case when left(@p_commntid, 1) = '1' then '1'
 					else null
-				end 'Indglobal',
+				end 'IndGlobal',
 				case when left(@p_commntid, 1) = '1' then rtrim(@p_comment_1)
 					else null
 				end 'RazonRef'

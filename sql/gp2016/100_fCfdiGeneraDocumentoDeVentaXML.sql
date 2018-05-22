@@ -115,6 +115,7 @@ as
 --Propósito. Obtiene las líneas de una factura en formato xml para ucfe
 --			Elimina carriage returns, line feeds, tabs, secuencias de espacios y caracteres especiales.
 --27/03/18 JCF Creación cfe
+--10/05/18 jcf nombre del item <= 80 caracteres
 --
 begin
 	declare @cncp xml;
@@ -123,7 +124,7 @@ begin
 		select 
 			Concepto.id								'NroLinDet',
 			Concepto.indicadorFactura				'IndFact',
-			Concepto.DescripcionItem				'NomItem', 
+			left(Concepto.DescripcionItem, 80)		'NomItem', 
 			Concepto.Cantidad						'Cantidad', 
 			rtrim(Concepto.UOFM)					'UniMed', 
 			cast(Concepto.ORUNTPRC as numeric(13, 2)) 'PrecioUnitario',
@@ -155,6 +156,9 @@ as
 --Propósito. Elabora un comprobante xml para factura electrónica ucfe
 --Requisitos. Se asume que todos los items son exentos
 --27/03/18 JCF Creación cfe
+--18/04/18 jcf Agrega filtro estadoContabilizado
+--04/05/18 jcf Agrega nombre de cliente y dirección
+--17/05/18 jcf Agrega fmaPago, CompraID
 --
 begin
 	declare @cfd xml;
@@ -169,8 +173,14 @@ begin
 
 		rtrim(pr.param5)									'eTck/Encabezado/IdDoc/TipoCFE',
 		replace(convert(varchar(20), tv.DOCDATE, 102), '.', '-')	'eTck/Encabezado/IdDoc/FchEmis',
-		1													'eTck/Encabezado/IdDoc/FmaPago',
-
+		case when isnull(ni.TXTFIELD, 'CREDITO') like '%CONTADO%' 
+			then 1 
+			else 2 
+		end													'eTck/Encabezado/IdDoc/FmaPago',
+		case when isnull(ni.TXTFIELD, 'CREDITO') like '%CONTADO%' 
+			then null
+			else replace(convert(varchar(20), tv.duedate, 102), '.', '-')
+		end													'eTck/Encabezado/IdDoc/FchVenc',
 		emi.TAXREGTN										'eTck/Encabezado/Emisor/RUCEmisor',
 		emi.CMPNYNAM										'eTck/Encabezado/Emisor/RznSoc',
 		emi.sucursal										'eTck/Encabezado/Emisor/CdgDGISucur',
@@ -186,9 +196,15 @@ begin
 			else null
 			end												'eTck/Encabezado/Receptor/DocRecep',
 		case when rtrim(tv.ccode) in ( '', 'UY') then null
-			else rtrim(tv.TXRGNNUM)
+			else right(rtrim(tv.TXRGNNUM), 20)
 			end												'eTck/Encabezado/Receptor/DocRecepExt',
-
+		tv.nombreCliente									'eTck/Encabezado/Receptor/RznSocRecep',
+		left(tv.address1 +'-'+ tv.address2, 70)				'eTck/Encabezado/Receptor/DirRecep',
+		tv.city												'eTck/Encabezado/Receptor/CiudadRecep',
+		tv.[state]											'eTck/Encabezado/Receptor/DeptoRecep',
+		tv.country											'eTck/Encabezado/Receptor/PaisRecep',
+		tv.zipcode											'eTck/Encabezado/Receptor/CP',
+		tv.cstponbr											'eTck/Encabezado/Receptor/CompraID',
 		tv.curncyid											'eTck/Encabezado/Totales/TpoMoneda',
 
 		case when tv.curncyid = 'UYU'
@@ -205,8 +221,11 @@ begin
 		cast(tv.total  as numeric(17, 2))					'eTck/Encabezado/Totales/MntPagar',
 		ucfe.fCfdiConceptosXML(tv.soptype, tv.sopnumbe, tv.docid) 'eTck',
 		ucfe.fCfdiRelacionadosXML(tv.soptype, tv.sopnumbe, tv.commntid, tv.comment_1) 'eTck'
-
 	from ucfe.vwCfdiSopTransaccionesVenta tv
+		left join sy03300 cp
+			on cp.pymtrmid = tv.pymtrmid
+		left join sy03900 ni
+			on ni.NOTEINDX = cp.NOTEINDX
 		outer apply ucfe.fCfdiEmisor() emi
 		outer apply ucfe.fCfdiParametros('na', 'V_PREFEXENTO', 'na', 'na', 'E_'+tv.docid, 'na', 'UCFE') pr
 		outer apply (select count(id) cantLinDet, 
@@ -215,6 +234,7 @@ begin
 					) ld
 	where tv.sopnumbe =	@sopnumbe
 	and tv.soptype = @soptype
+	and tv.estadoContabilizado = 'contabilizado'
 	FOR XML path('CFE'), type
 	);
 	--select @cfd;
