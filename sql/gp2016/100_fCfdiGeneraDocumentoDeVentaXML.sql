@@ -116,6 +116,7 @@ as
 --			Elimina carriage returns, line feeds, tabs, secuencias de espacios y caracteres especiales.
 --27/03/18 JCF Creación cfe
 --10/05/18 jcf nombre del item <= 80 caracteres
+--13/06/18 jcf Agrega Cod
 --
 begin
 	declare @cncp xml;
@@ -123,6 +124,8 @@ begin
 	select @cncp = (
 		select 
 			Concepto.id								'NroLinDet',
+			'INT1'									 'CodItem/TpoCod',
+			rtrim(Concepto.ITEMNMBR)				 'CodItem/Cod',
 			Concepto.indicadorFactura				'IndFact',
 			left(Concepto.DescripcionItem, 80)		'NomItem', 
 			Concepto.Cantidad						'Cantidad', 
