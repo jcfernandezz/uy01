@@ -5,8 +5,8 @@
 --2/03/18 JCF Creación
 --
 -----------------------------------------------------------------------------------
-use prd02
-go
+--use prd02
+--go
 
 IF DATABASE_PRINCIPAL_ID('rol_uruguayUcfe') IS NULL
 	create role rol_uruguayUcfe;

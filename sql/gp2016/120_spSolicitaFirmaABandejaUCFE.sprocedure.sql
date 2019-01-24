@@ -12,6 +12,7 @@ GO
 --Requisito. 
 --19/04/18 jcf Creación
 --17/05/18 jcf Agrega adenda
+--24/01/19 jcf Agrega leyenda a la adenda
 --
 create PROCEDURE ucfe.spSolicitaFirmaABandejaUCFE 
 AS
@@ -21,7 +22,9 @@ AS
 			BEGIN TRAN;
 			insert into ucfe.synonymDatabaseChannelInput(TipoMsj, TipoCfe, CodTerminal, CodComercio, FechaReq, HoraReq, UUID, adenda, [Xml])
 										select 310, pe.tipoCfe, pe.codTerminal, pe.codComercio, GETDATE(), 0, pe.sopnumbe, 
-											'Condición de pago: '+rtrim(pe.pymtrmid)+char(10)+case when pe.soptype = 3 then 'Incoterm: ' else '' end + rtrim(pe.comment_1), 
+											'Condición de pago: '+rtrim(pe.pymtrmid) +char(10)+
+											case when pe.soptype = 3 then 'Incoterm: ' else '' end + rtrim(pe.comment_1) +char(10)+
+											'Contribuyente amparado a la Ley N° 15.921', 
 											convert(varchar(max), pe.docXml)
 										from ucfe.vwCfePendientesDeEnviar pe
 			;
